@@ -13,7 +13,7 @@
       <h1 class="text-center">PLAYER</h1>
       <div class="wins">
         <div class="wins text-center" style="background-color: green; margin: 0; color: white;">
-
+          {{playerScore}}
         </div>
       </div>
     </div>
@@ -21,29 +21,32 @@
       <h1 class="text-center">COMPUTER</h1>
       <div class="wins">
         <div class="wins text-center" style="background-color: green; margin: 0; color: white;">
-         
+         {{computerScore}}
         </div>
       </div>
     </div>
   </section>
   <section class="row controls">
     <div class="small-12 columns">
-      <button id="start-game">START NEW GAME</button>
+      <button id="start-game" @click="startNewGame()">START NEW GAME</button>
     </div>
   </section>
   <section class="row controls">
     <div class="small-12 columns">
-      <button id="rock">ROCK</button>
-      <button id="paper">PAPER</button>
-      <button id="scissors">SCISSORS</button>
-      <button id="restart">RESTART</button>
+      <button id="rock" @click="selectAction('rock')">ROCK</button>
+      <button id="paper" @click="selectAction('paper')">PAPER</button>
+      <button id="scissors" @click="selectAction('scissors')">SCISSORS</button>
+      <button id="restart" @click="startNewGame()">RESTART</button>
     </div>
   </section>
   <section class="row log">
     <div class="small-12 columns">
       <ul>
         <li>
-          
+          {{playerSelected}}
+        </li>
+        <li>
+          {{computerSelected}}
         </li>
       </ul>
     </div>
